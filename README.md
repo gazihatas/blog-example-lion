@@ -41,3 +41,8 @@
 
 ### Bootstrap Templates
 - **[Bootstrapt Album Example](https://getbootstrap.com/docs/4.6/examples/album/).**
+
+## Post | Model and Migration 
+- ```php artisam make:model Post -m```
+- ```php artisan make:controller PageController```
+- ```php artisan make:controller PostController --resource```
