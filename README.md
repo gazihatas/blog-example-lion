@@ -33,4 +33,11 @@
 **After installing Jetstream, you should install and build your NPM dependencies and migrate your database:**
 1.```npm install```
 2.```npm run dev```
-3.```php artisan migrate```
+3.```php artisan migrate``` or ```php artisan migrate:fresh```
+
+### Jetstream Profile Photos Active
+**config/jetstream.php => ```'features' =>[ Features::profilePhotos(),]``` => No comments**
+```php artisan storage:link```
+
+### Bootstrap Templates
+- **[Bootstrapt Album Example](https://getbootstrap.com/docs/4.6/examples/album/).**
