@@ -22,6 +22,6 @@ Route::get('/', function () {
 Route::get('/',[PageController::class, 'index']);
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    //return view('dashboard');
-    Route::get('/',[PostController::class, 'index']);
+    Route::get('/index',[PostController::class, 'index'])->name('index');
+    Route::get('/post-add',[PostController::class, 'create'])->name('post.create');
 });
