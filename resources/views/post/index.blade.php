@@ -4,7 +4,7 @@
     <div class="card-header">
         <div class="float-left font-weight-bolder">My Post</div>
         <div class="float-right">
-            <a href="{{route('post.create')}}" class="btn btn-sm btn-primary">Add Post</a>
+            <a href="{{route('post.create')}}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i> Add Post</a>
         </div>
     </div>
     
@@ -20,13 +20,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">image</th>
-                <td>Title</td>
-                <td>Slug</td>
-                <td>Body</td>
-                <td>Icons</td>
-              </tr>
+                @foreach ($posts as  $post)
+                <tr>
+                  <th scope="row"> <img src="{{ asset('images')}}/{{ $post->image_path}}" alt="" style="width:50px"> </th>
+                  <td> {{ $post->title }} </td>
+                  <td> {{ $post->slug }} </td>
+                  <td> {{ \Illuminate\Support\Str::limit($post->body, 50) }} </td>
+                  <td>
+                      <a href="#" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="#" class="btn btn-sm btn-warning"><i class="fa-solid fa-circle-info"></i></a>
+                      <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                  </td>
+                </tr>
+                @endforeach
             </tbody>
           </table>
     

@@ -20,6 +20,7 @@ Route::get('/', function () {
 */
 
 Route::get('/',[PageController::class, 'index']);
+Rouute::get('');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/index',[PostController::class, 'index'])->name('index');

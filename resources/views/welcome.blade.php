@@ -53,55 +53,27 @@
                   <div class="container">
               
                     <div class="row">
+            
+                      @foreach ($posts as $post)
                       <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                        <img src="{{ asset('images/yatay.jpg')}}" alt="" class="img-fluid img-thumbnail rounded mx-auto d-block">
+                          <img src="{{asset('images')}}/{{$post->image_path}}" alt="" class="img-fluid img-thumbnail rounded mx-asuto d-block">
+
                           <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">{{ $post->title }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                               <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <a href="{{ route('post.show', $post->slug) }}" class="btn btn-sm btn-outline-secondary">View</a>
                                 
                               </div>
-                              <small class="text-muted">9 mins</small>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-              
-                      <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-              
-                          <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                              <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                
-                              </div>
-                              <small class="text-muted">9 mins</small>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-              
-                          <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                              <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                
-                              </div>
-                              <small class="text-muted">9 mins</small>
+                              <small class="text-muted">{{ $post->user->name }}</small>
+                              <small class="text-muted">{{ $post->update_at }}</small>
                             </div>
                           </div>
                         </div>
                       </div>
                      
+                      @endforeach
               
                    
                     </div>

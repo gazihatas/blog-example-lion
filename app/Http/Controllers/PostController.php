@@ -15,7 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.index');
+        //eklenen verileri anasayfaya gönderme işlemi
+        $posts = Post::where('user_id', auth()->user()->id)->orderBy('updated_at', 'DESC')->paginate();
+        return view('post.index', compact('posts'));
     }
 
     /**

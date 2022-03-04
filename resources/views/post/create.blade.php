@@ -2,9 +2,9 @@
 
     <div class="card">
         <div class="card-header">
-            <div class="float-left font-weight-bolder">My Post</div>
+            <div class="float-left font-weight-bolder">Post Add</div>
             <div class="float-right">
-                <a href="#" class="btn btn-sm btn-primary">Add Post</a>
+                <a href="{{ route('index')}}" class="btn btn-sm btn-primary">My Post</a>
             </div>
         </div>
         
