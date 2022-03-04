@@ -11,4 +11,10 @@ class PageController extends Controller
         $posts = Post::orderBy('updated_at', 'DESC')->paginate();
         return view('welcome', compact('posts'));
     }
+
+    public function show($slug) {
+        $post = Post::where('slug',$slug)->first();
+        return view('post-show', compact('post'));
+
+    }
 }
