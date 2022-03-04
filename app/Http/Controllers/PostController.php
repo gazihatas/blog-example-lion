@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -34,7 +36,24 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'body'  => 'required',
+            'image' => 'required|image|mimes:jpg,jpeg,png|max:4096'
+        ]);
+        
+        $newImageName = uniqid(). '-' . $request->title . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $newImageName); //Resimin uzantısını aldık
+
+        Post::create([
+            'title' => $request->title,
+            'slug'  =>  Str::slug($request->title),
+            'body'  => $request->body,
+            'image_path' => $newImageName,
+            'user_id' => auth()->user()->id
+        ]);
+
+        return redirect()->back()->with('messages', 'Post has been created successfuly!');
     }
 
     /**

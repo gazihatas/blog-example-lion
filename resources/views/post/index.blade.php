@@ -4,7 +4,7 @@
     <div class="card-header">
         <div class="float-left font-weight-bolder">My Post</div>
         <div class="float-right">
-            <a href="{{route()}}" class="btn btn-sm btn-primary">Add Post</a>
+            <a href="{{route('post.create')}}" class="btn btn-sm btn-primary">Add Post</a>
         </div>
     </div>
     
