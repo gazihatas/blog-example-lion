@@ -46,3 +46,6 @@
 - ```php artisam make:model Post -m```
 - ```php artisan make:controller PageController```
 - ```php artisan make:controller PostController --resource```
+
+### CKEDITOR LARAVEL USE
+- **[Ckeditor laravel use](https://artisansweb.net/how-to-use-ckeditor-5-in-laravel/)**
