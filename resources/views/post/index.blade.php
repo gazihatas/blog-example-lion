@@ -7,8 +7,13 @@
             <a href="{{route('post.create')}}" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i> Add Post</a>
         </div>
     </div>
-    
+
     <div class="card-body">
+      @if (Session::has('messages'))
+          <div class="alert alert-primary" role="alert">
+              {{ Session::get('messages') }}
+          </div>
+      @endif
         <table class="table table-dark">
             <thead>
               <tr>
@@ -27,15 +32,17 @@
                   <td> {{ $post->slug }} </td>
                   <td> {{ \Illuminate\Support\Str::limit($post->body, 50) }} </td>
                   <td>
-                      <a href="#" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a href="#" class="btn btn-sm btn-warning"><i class="fa-solid fa-circle-info"></i></a>
+                      <a href="{{ route('post.edit', $post->slug )}}" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="{{ route('post.show', $post->slug )}}" class="btn btn-sm btn-warning"><i class="fa-solid fa-circle-info"></i></a>
                       <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                   </td>
                 </tr>
                 @endforeach
             </tbody>
           </table>
-    
+
+          {{ $posts->links() }}
+
     </div>
 
 </div>

@@ -57,7 +57,7 @@
                       @foreach ($posts as $post)
                       <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                          <img src="{{asset('images')}}/{{$post->image_path}}" alt="" class="img-fluid img-thumbnail rounded mx-asuto d-block">
+                          <img src="{{asset('images')}}/{{$post->image_path}}" alt="" class="img-fluid img-thumbnail rounded mx-asuto d-block" style="width: 250px; height:250px;">
 
                           <div class="card-body">
                             <p class="card-text">{{ $post->title }}</p>
@@ -67,7 +67,7 @@
                                 
                               </div>
                               <small class="text-muted">{{ $post->user->name }}</small>
-                              <small class="text-muted">{{ $post->update_at }}</small>
+                              <small class="text-muted">{{ $post->updated_at }}</small>
                             </div>
                           </div>
                         </div>
@@ -75,7 +75,7 @@
                      
                       @endforeach
               
-                   
+                      {{ $posts->links() }}
                     </div>
                   </div>
                 </div>

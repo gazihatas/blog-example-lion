@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Post</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -43,17 +43,15 @@
 
                 <section class="jumbotron text-center mt-5">
                   <div class="container">
-                    <img src="{{asset('images')}}/{{$post->image_path}}" alt="" class="img-fluid img-thumbnail rounded mx-asuto d-block" style="width:500px">
+                    <img src="{{asset('images')}}/{{$post->image_path}}" alt="" class="img-fluid img-thumbnail rounded mx-asuto d-block" style="width: 500px">
                     <h1 class="mt-3">{{ $post->title }}</h1>
-                    <p class="lead text-muted mt-3"> {{ $post->body }}</p>
-                   
+                    <p class="lead text-muted mt-3"> {!! $post->body !!}</p>
+
                   </div>
                 </section>
-              
-              
-              
-              </main>
-            
+
+            </main>
+
         </div>
 
 

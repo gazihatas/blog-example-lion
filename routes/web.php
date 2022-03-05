@@ -26,4 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/index',[PostController::class, 'index'])->name('index');
     Route::get('/post-add',[PostController::class, 'create'])->name('post.create');
     Route::post('/post-store',[PostController::class, 'store'])->name('post.store');
+    Route::get('/post-edit{slug}',[PostController::class, 'edit'])->name('post.edit');
+    Route::put('/post-update/{slug}',[PostController::class, 'update'])->name('post.update');
+    //Route::post('editor/image_upload', [PostController::class, 'upload'])->name('upload');
 });

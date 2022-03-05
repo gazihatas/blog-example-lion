@@ -8,7 +8,7 @@ class PageController extends Controller
 {
     public function index(){
         //eklenen verileri anasayfaya gönderme işlemi
-        $posts = Post::orderBy('updated_at', 'DESC')->paginate();
+        $posts = Post::orderBy('updated_at', 'DESC')->paginate(6);
         return view('welcome', compact('posts'));
     }
 
