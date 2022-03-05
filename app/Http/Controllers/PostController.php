@@ -162,6 +162,10 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::where('id',$id)->first();
+        $post->delete();
+
+        return redirect()->route('index')->with('messages', 'Post has been DELETED successfuly!');
+
     }
 }

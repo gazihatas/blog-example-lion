@@ -34,7 +34,7 @@
                   <td>
                       <a href="{{ route('post.edit', $post->slug )}}" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
                       <a href="{{ route('post.show', $post->slug )}}" class="btn btn-sm btn-warning"><i class="fa-solid fa-circle-info"></i></a>
-                      <a href="#" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                      <a href="{{ route('post.delete',$post->id ) }}" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                   </td>
                 </tr>
                 @endforeach

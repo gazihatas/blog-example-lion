@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 */
 
-Route::get('/',[PageController::class, 'index']);
+Route::get('/',[PageController::class, 'index'])->name('all.post');
 Route::get('/post-show/{slug}',[PageController::class, 'show'])->name('post.show');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
@@ -28,5 +28,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::post('/post-store',[PostController::class, 'store'])->name('post.store');
     Route::get('/post-edit{slug}',[PostController::class, 'edit'])->name('post.edit');
     Route::put('/post-update/{slug}',[PostController::class, 'update'])->name('post.update');
-    //Route::post('editor/image_upload', [PostController::class, 'upload'])->name('upload');
+    Route::get('/post-delete/{id}',[PostController::class, 'destroy'])->name('post.delete');
 });
